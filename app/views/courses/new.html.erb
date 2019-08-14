@@ -1,1 +1,44 @@
 <h1>New course page</h1>
+
+<%= form_for(@course, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="row">
+     <form class="col s12">
+       <div class="row">
+
+         <div class="input-field col s6">
+           <div class = 'control-label col-sm-2'>
+             <%= f.label :short_name %>
+           </div>
+           <div class = 'validate'>
+             <%= f.text_field :short_name, class: "form-control", placeholder: "Course short name" %>
+           </div>
+         </div>
+
+         <div class="input-field col s6">
+           <div class = 'control-label col-sm-2'>
+             <%= f.label :name %>
+           </div>
+           <div class = 'validate'>
+             <%= f.text_field :name, class: "form-control", placeholder: "Course name" %>
+           </div>
+         </div>
+
+       </div>
+       <div class="row">
+         <div class="input-field col s12">
+           <div class = 'control-label col-sm-2'>
+             <%= f.label :description %>
+           </div>
+           <div class = 'validate'>
+             <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Course description" %>
+           </div>
+         </div>
+       </div>
+
+       <div class = 'form-group'>
+         <div class = 'col-sm-offset-2 col-sm-10'>
+           <%= f.submit class: 'btn btin-primary btn-large' %><br>
+         </div>
+       </div>
+
+  <% end %>

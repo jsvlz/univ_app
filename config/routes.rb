@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     get 'about', to: 'pages#about'
     get 'courses/new', to: 'courses#new'
 
+    resources :courses, except: [:new]
+    resources :students
+
 end
