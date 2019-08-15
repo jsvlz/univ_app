@@ -6,7 +6,18 @@
           Name: <%= @student.name %>
         </span>
         <p>Email: <%= @student.email %></p>
-        <p>Course Enrollments: None</p>
+        <p>
+          Course Enrollments:
+          <% if @student.courses.empty? %>
+            None
+          <% else %>
+            <% @student.courses.each do |f| %>
+              <ul>
+                <li><%= link_to f.name, course_path(f) %></li>
+              </ul>
+            <% end %>
+          <% end %>
+        </p>
       </div>
     </div>
     <% if logged_in? && current_user == @student%>

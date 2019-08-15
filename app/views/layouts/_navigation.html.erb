@@ -1,24 +1,32 @@
 <header>
   <ul id="dropdown1" class="dropdown-content">
     <li><%= session_link %></li>
-    <li><a href="#!">two</a></li>
+    <% if logged_in? %>
+      <li><%= link_to "View your account", student_path(current_user) %></li>
+    <% end %>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
   <ul id="dropdown2" class="dropdown-content">
     <li><%= session_link %></li>
-    <li><a href="#!">two</a></li>
+    <% if logged_in? %>
+      <li><%= link_to "View your account", student_path(current_user) %></li>
+    <% end %>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
   <ul id="dropdown3" class="dropdown-content">
-    <li><%= link_to 'View students', students_path %></li>
+    <% if logged_in? %>
+      <li><%= link_to 'View students', students_path %></li>
+    <% end %>
     <li><%= link_to 'Add student', new_student_path %></li>
     <!-- <li class="divider"></li>
     <li><a href="#!">three</a></li> -->
   </ul>
   <ul id="dropdown4" class="dropdown-content">
-    <li><%= link_to 'View students', students_path %></li>
+    <% if logged_in? %>
+      <li><%= link_to 'View students', students_path %></li>
+    <% end %>
     <li><%= link_to 'Add student', new_student_path %></li>
     <!-- <li class="divider"></li>
     <li><a href="#!">three</a></li> -->

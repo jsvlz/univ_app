@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     post 'login', to: 'logins#create'
     delete 'login', to: 'logins#destroy'
 
+    post 'course_enroll', to: 'student_courses#create'
+
     resources :courses, except: [:new]
     resources :students
 
