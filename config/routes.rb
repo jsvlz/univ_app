@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     get 'home', to: 'pages#home'
     get 'about', to: 'pages#about'
     get 'courses/new', to: 'courses#new'
+    get 'login', to: 'logins#new'
+    post 'login', to: 'logins#create'
+    delete 'login', to: 'logins#destroy'
 
     resources :courses, except: [:new]
     resources :students
